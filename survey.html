@@ -61,13 +61,13 @@
 <!-- End Navbar -->
 
 <div class="wrapper">
-    <div class="header header-filter" style="background-image: url('http://ipfcom.org/img/fondo_home_completo3.jpg');">
+    <div class="header header-filter" style="background-image: url('assets/img/bg.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="brand">
-                        <h1>Survey v2</h1>
-                        <h3>Instituto de Facilitación del Comercio</h3>
+                        <h1>Encuesta VUCE 2.0</h1>
+                        <!-- <h3>Instituto de Facilitación del Comercio</h3> -->
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@
                                         <span class="input-group-addon">
                                             <i class="material-icons">domain</i>
                                         </span>
-                                        <div class="form-group is-empty"><input type="text" class="form-control" placeholder="Nombre de la empresa u organización"><span class="material-input"></span></div>
+                                        <div class="form-group is-empty"><input id="company" type="text" class="form-control" placeholder="Nombre de la empresa u organización"><span class="material-input"></span></div>
                                     </div>
 
                                     <div class="input-group">
@@ -140,20 +140,14 @@
                                         </span>
                                         <div class="form-group is-empty">
                                             <div class="input-field ubigeo dropdownjs">
-                                                <select>
-                                                    <option value="" disabled selected>Provincia</option>
-                                                    <option value="1">Option 1</option>
-                                                    <option value="2">Option 2</option>
-                                                    <option value="3">Option 3</option>
+                                                <select id="dep">
+                                                    <option value="" disabled selected>Departamento</option>
                                                 </select>
                                             </div>
 
                                             <div class="input-field ubigeo dropdownjs">
-                                                <select>
-                                                    <option value="" disabled selected>Distrito</option>
-                                                    <option value="1">Option 1</option>
-                                                    <option value="2">Option 2</option>
-                                                    <option value="3">Option 3</option>
+                                                <select id="prov">
+                                                    <option value="" disabled selected>Provincia</option>
                                                 </select>
                                             </div>
                                             <span class="material-input"></span></div>
@@ -1441,10 +1435,10 @@
     <script src="assets/js/material.min.js"></script>
 
     <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-    <script src="assets/js/nouislider.min.js" type="text/javascript"></script>
+    <!-- <script src="assets/js/nouislider.min.js" type="text/javascript"></script> -->
 
     <!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
-    <script src="assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <!-- <script src="assets/js/bootstrap-datepicker.js" type="text/javascript"></script> -->
 
     <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
     <script src="assets/js/material-kit.js" type="text/javascript"></script>
@@ -1464,4 +1458,5 @@
 
         });
     </script>
+    <script src="assets/js/main.js" type="text/javascript"></script>
 </html>
