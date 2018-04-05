@@ -75,7 +75,7 @@
         </div>
     </div>
 
-    <div class="main main-raised">
+    <form class="form main main-raised" id="formSurvey" method="" action="">
         <div class="section section-basic">
             <div class="container">
                 <div class="title">
@@ -115,70 +115,66 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 col-md-offset-3">
-                        <div class="card card-signup">
-                            <form class="form" method="" action="">
-                                
-                                <div class="content">
+                        <div class="card card-signup">    
+                            <div class="content">
 
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="material-icons">domain</i>
-                                        </span>
-                                        <div class="form-group is-empty"><input type="text" class="form-control" placeholder="Nombre de la empresa u organización"><span class="material-input"></span></div>
-                                    </div>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="material-icons">shopping_cart</i>
-                                        </span>
-                                        <div class="form-group is-empty"><input type="text" class="form-control" placeholder="Productos que comercializa haciendo uso del Procedimiento"><span class="material-input"></span></div>
-                                    </div>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="material-icons">location_on</i>
-                                        </span>
-                                        <div class="form-group is-empty">
-                                            <div class="input-field ubigeo dropdownjs">
-                                                <select>
-                                                    <option value="" disabled selected>Provincia</option>
-                                                    <option value="1">Option 1</option>
-                                                    <option value="2">Option 2</option>
-                                                    <option value="3">Option 3</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="input-field ubigeo dropdownjs">
-                                                <select>
-                                                    <option value="" disabled selected>Distrito</option>
-                                                    <option value="1">Option 1</option>
-                                                    <option value="2">Option 2</option>
-                                                    <option value="3">Option 3</option>
-                                                </select>
-                                            </div>
-                                            <span class="material-input"></span></div>
-                                    </div>
-
-
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="optionsCheckboxes">
-                                            El Procedimiento se encuentra en la VUCE
-                                        </label>
-                                    </div>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="material-icons">create</i>
-                                        </span>
-                                        <div class="form-group is-empty"><input type="text" class="form-control" placeholder="Denominación del Procedimiento"><span class="material-input"></span></div>
-                                    </div>
-
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">domain</i>
+                                    </span>
+                                    <div class="form-group is-empty"><input type="text" name="empresa" class="form-control" placeholder="Nombre de la empresa u organización" required><span class="material-input"></span></div>
                                 </div>
-                                <!-- <div class="footer text-center">
-                                    <a href="#pablo" class="btn btn-simple btn-primary btn-lg">Get Started</a>
-                                </div> -->
-                            </form>
+
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">shopping_cart</i>
+                                    </span>
+                                    <div class="form-group is-empty"><input type="text" name="productos" class="form-control" placeholder="Productos que comercializa haciendo uso del Procedimiento" required><span class="material-input"></span></div>
+                                </div>
+
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">location_on</i>
+                                    </span>
+                                    <div class="form-group is-empty">
+                                        <div class="input-field ubigeo dropdownjs">
+                                            <select name="provincia" required>
+                                                <option value="" disabled selected>Provincia</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="input-field ubigeo dropdownjs">
+                                            <select name="distrito" required>
+                                                <option value="" disabled selected>Distrito</option>
+                                                <option value="1">Option 1</option>
+                                                <option value="2">Option 2</option>
+                                                <option value="3">Option 3</option>
+                                            </select>
+                                        </div>
+                                        <span class="material-input"></span></div>
+                                </div>
+
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="procedimiento_esta_en_vuce">
+                                        El Procedimiento se encuentra en la VUCE
+                                    </label>
+                                </div>
+
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">create</i>
+                                    </span>
+                                    <div class="form-group is-empty"><input type="text" name="procedimiento_denominacion" class="form-control" placeholder="Denominación del Procedimiento" required><span class="material-input"></span></div>
+                                </div>
+
+                            </div>
+                            <!-- <div class="footer text-center">
+                                <a href="#pablo" class="btn btn-simple btn-primary btn-lg">Get Started</a>
+                            </div> -->
                             <div class="space-50"></div>
                         </div>
                     </div>
@@ -197,7 +193,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q01">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -211,36 +207,36 @@
                             </div>
                             <div class="content">
                                 <div class="tab-content text-center">
-                                    <div class="tab-pane active" id="profile">
+                                    <div class="tab-pane active" id="profilex">
                                         <div class="row">
                                             <div class="col-sm-12 text-left">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q01" value="1" required><span class="circle"></span><span class="check"></span>
                                                         Muy amigable
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q01" value="2"><span class="circle"></span><span class="check"></span>
                                                         Suficientemente amigable
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q01" value="3"><span class="circle"></span><span class="check"></span>
                                                         Regular
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q01" value="4"><span class="circle"></span><span class="check"></span>
                                                         Poco amigable
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q01" value="5"><span class="circle"></span><span class="check"></span>
                                                         Nada amigable
                                                     </label>
                                                 </div>
@@ -256,7 +252,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="#q02">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -277,31 +273,31 @@
                                                 <small>2.1.- Trazabilidad del Procedimiento</small>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_01" required><span class="circle"></span><span class="check"></span>
                                                         Muy positivo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_01"><span class="circle"></span><span class="check"></span>
                                                         Positivo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_01"><span class="circle"></span><span class="check"></span>
                                                         Neutral
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_01"><span class="circle"></span><span class="check"></span>
                                                         Negativo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_01"><span class="circle"></span><span class="check"></span>
                                                         Muy negativo
                                                     </label>
                                                 </div>
@@ -312,31 +308,31 @@
                                                 <small>2.2.- Simplificación de documentos</small>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_02" required><span class="circle"></span><span class="check"></span>
                                                         Muy positivo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_02"><span class="circle"></span><span class="check"></span>
                                                         Positivo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_02"><span class="circle"></span><span class="check"></span>
                                                         Neutral
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_02"><span class="circle"></span><span class="check"></span>
                                                         Negativo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_02"><span class="circle"></span><span class="check"></span>
                                                         Muy negativo
                                                     </label>
                                                 </div>
@@ -347,31 +343,31 @@
                                                 <small>2.3.- Simplificación de datos o información</small>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_03" required><span class="circle"></span><span class="check"></span>
                                                         Muy positivo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_03"><span class="circle"></span><span class="check"></span>
                                                         Positivo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_03"><span class="circle"></span><span class="check"></span>
                                                         Neutral
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_03"><span class="circle"></span><span class="check"></span>
                                                         Negativo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_03"><span class="circle"></span><span class="check"></span>
                                                         Muy negativo
                                                     </label>
                                                 </div>
@@ -382,31 +378,31 @@
                                                 <small>2.4.- Reducción en los costos/gastos de la tramitación</small>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_04" required><span class="circle"></span><span class="check"></span>
                                                         Muy positivo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_04"><span class="circle"></span><span class="check"></span>
                                                         Positivo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_04"><span class="circle"></span><span class="check"></span>
                                                         Neutral
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_04"><span class="circle"></span><span class="check"></span>
                                                         Negativo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q02_04"><span class="circle"></span><span class="check"></span>
                                                         Muy negativo
                                                     </label>
                                                 </div>
@@ -417,31 +413,31 @@
                                                 <small>2.5.- Agilización en la importación o exportación</small>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q05_05" required><span class="circle"></span><span class="check"></span>
                                                         Muy positivo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q05_05"><span class="circle"></span><span class="check"></span>
                                                         Positivo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q05_05"><span class="circle"></span><span class="check"></span>
                                                         Neutral
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q05_05"><span class="circle"></span><span class="check"></span>
                                                         Negativo
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q05_05"><span class="circle"></span><span class="check"></span>
                                                         Muy negativo
                                                     </label>
                                                 </div>
@@ -457,7 +453,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q03">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -471,16 +467,16 @@
                             </div>
                             <div class="content">
                                 <div class="tab-content text-center">
-                                    <div class="tab-pane active" id="profile">
+                                    <div class="tab-pane active card-dynamic" id="profile">
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="form-group is-empty">
-                                                    <input type="text" value="" placeholder="Nombre de la oportunidad" class="form-control">
+                                                    <input type="text" name="q03[]" value="" placeholder="Nombre de la oportunidad" class="form-control">
                                                 <span class="material-input"></span></div>
                                             </div>
                                             <div class="col-sm-5">
                                                 <div class="form-group is-empty">
-                                                    <input type="text" value="" placeholder="Descripción" class="form-control">
+                                                    <input type="text" name="q03_descripcion[]" value="" placeholder="Descripción" class="form-control">
                                                 <span class="material-input"></span></div>
                                             </div>
                                             <div class="col-sm-3">
@@ -507,7 +503,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q04">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -526,13 +522,13 @@
                                             <div class="col-sm-12 text-left">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q04" value="1" data-nodisable="#q05 input[type=radio]" required><span class="circle"></span><span class="check"></span>
                                                         Sí
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q04" value="0" data-disable="#q05 input"><span class="circle"></span><span class="check"></span>
                                                         No
                                                     </label>
                                                 </div>
@@ -547,7 +543,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q05">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -566,24 +562,24 @@
                                             <div class="col-sm-12 text-left">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q05" data-disable="#q05 input[name=q05_otros]" disabled required><span class="circle"></span><span class="check"></span>
                                                         Por el nivel de complejidad del Procedimiento.
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q05" data-disable="#q05 input[name=q05_otros]" disabled><span class="circle"></span><span class="check"></span>
                                                         Por el costo de oportunidad que representa hacerlo de manera directa
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q05" data-nodisable="#q05 input[name=q05_otros]" disabled><span class="circle"></span><span class="check"></span>
                                                         Otros (señale cuál)
                                                     </label>
                                                 </div>
                                                 <div class="input-group col-sm-12">
-                                                    <div class="form-group is-empty"><input type="text" class="form-control" placeholder="Otros"><span class="material-input"></span></div>
+                                                    <div class="form-group is-empty"><input type="text" name="q05_otros" class="form-control" placeholder="Otros" disabled required><span class="material-input"></span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -615,13 +611,13 @@
                                             <div class="col-sm-12 text-left">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="optionsRadios6" value="1" required><span class="circle"></span><span class="check"></span>
                                                         Sí
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="optionsRadios6" value="0"><span class="circle"></span><span class="check"></span>
                                                         No
                                                     </label>
                                                 </div>
@@ -654,7 +650,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 text-left">
                                                 <div class="input-group col-sm-12">
-                                                    <div class="form-group is-empty"><input type="text" class="form-control" placeholder="Otros"><span class="material-input"></span></div>
+                                                    <div class="form-group is-empty"><input type="text" name="optionsRadios6_otros" class="form-control" placeholder="Otros" required="[name='optionsRadios6'][value='1']:checked"><span class="material-input"></span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -792,16 +788,16 @@
                             </div>
                             <div class="content">
                                 <div class="tab-content text-center">
-                                    <div class="tab-pane active" id="profile">
+                                    <div class="tab-pane active card-dynamic" id="profile">
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="form-group is-empty">
-                                                    <input type="text" value="" placeholder="Requisito" class="form-control">
+                                                    <input type="text" name="requisito1[]" value="" placeholder="Requisito" class="form-control">
                                                 <span class="material-input"></span><span class="material-input"></span></div>
                                             </div>
                                             <div class="col-sm-5">
                                                 <div class="form-group is-empty">
-                                                    <input type="text" value="" placeholder="Explicar" class="form-control">
+                                                    <input type="text" name="requisito1_explicar[]" value="" placeholder="Explicar" class="form-control">
                                                 <span class="material-input"></span><span class="material-input"></span></div>
                                             </div>
                                             <div class="col-sm-3">
@@ -831,16 +827,16 @@
                             </div>
                             <div class="content">
                                 <div class="tab-content text-center">
-                                    <div class="tab-pane active" id="profile">
+                                    <div class="tab-pane active card-dynamic" id="profile">
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="form-group is-empty">
-                                                    <input type="text" value="" placeholder="Requisito" class="form-control">
+                                                    <input type="text" name="requisito2[]" value="" placeholder="Requisito" class="form-control">
                                                 <span class="material-input"></span><span class="material-input"></span></div>
                                             </div>
                                             <div class="col-sm-5">
                                                 <div class="form-group is-empty">
-                                                    <input type="text" value="" placeholder="Explicar" class="form-control">
+                                                    <input type="text" name="requisito2_explicar[]" value="" placeholder="Explicar" class="form-control">
                                                 <span class="material-input"></span><span class="material-input"></span></div>
                                             </div>
                                             <div class="col-sm-3">
@@ -856,7 +852,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q13">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -875,13 +871,13 @@
                                             <div class="col-sm-12 text-left">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q13" data-nodisable="#q14 .form-control, #q14 .btn" required><span class="circle"></span><span class="check"></span>
                                                         Sí
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q13" data-disable="#q14 .form-control, #q14 .btn"><span class="circle"></span><span class="check"></span>
                                                         No
                                                     </label>
                                                 </div>
@@ -896,7 +892,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q14">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -910,20 +906,20 @@
                             </div>
                             <div class="content">
                                 <div class="tab-content text-center">
-                                    <div class="tab-pane active" id="profile">
+                                    <div class="tab-pane active card-dynamic" id="profile">
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="form-group is-empty">
-                                                    <input type="text" value="" placeholder="Requisito" class="form-control">
+                                                    <input type="text" name="q14[]" value="" placeholder="Requisito" class="form-control" disabled>
                                                 <span class="material-input"></span><span class="material-input"></span></div>
                                             </div>
                                             <div class="col-sm-5">
                                                 <div class="form-group is-empty">
-                                                    <input type="text" value="" placeholder="Explicar" class="form-control">
+                                                    <input type="text" name="q14_explicar[]" value="" placeholder="Explicar" class="form-control" disabled>
                                                 <span class="material-input"></span><span class="material-input"></span></div>
                                             </div>
                                             <div class="col-sm-3">
-                                                <button class="btn btn-primary">Agregar</button>
+                                                <button class="btn btn-primary" disabled>Agregar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -935,7 +931,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q15">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -954,13 +950,13 @@
                                             <div class="col-sm-12 text-left">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q15" data-nodisable="#q16 .form-control, #q16 .btn" required><span class="circle"></span><span class="check"></span>
                                                         Sí
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q15" data-disable="#q16 .form-control, #q16 .btn"><span class="circle"></span><span class="check"></span>
                                                         No
                                                     </label>
                                                 </div>
@@ -975,7 +971,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q16">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -989,20 +985,20 @@
                             </div>
                             <div class="content">
                                 <div class="tab-content text-center">
-                                    <div class="tab-pane active" id="profile">
+                                    <div class="tab-pane active card-dynamic" id="profile">
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="form-group is-empty">
-                                                    <input type="text" value="" placeholder="Requisito" class="form-control">
+                                                    <input type="text" name="q16[]" value="" placeholder="Requisito" class="form-control" disabled>
                                                 <span class="material-input"></span><span class="material-input"></span></div>
                                             </div>
                                             <div class="col-sm-5">
                                                 <div class="form-group is-empty">
-                                                    <input type="text" value="" placeholder="Explicar" class="form-control">
+                                                    <input type="text" name="q16_explicar[]" value="" placeholder="Explicar" class="form-control" disabled>
                                                 <span class="material-input"></span><span class="material-input"></span></div>
                                             </div>
                                             <div class="col-sm-3">
-                                                <button class="btn btn-primary">Agregar</button>
+                                                <button class="btn btn-primary" disabled>Agregar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -1014,7 +1010,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q17">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -1033,13 +1029,13 @@
                                             <div class="col-sm-12 text-left">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q17" data-nodisable="#q18 [name=q18]" required><span class="circle"></span><span class="check"></span>
                                                         Sí
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q17" data-disable="#q18 [name=q18]"><span class="circle"></span><span class="check"></span>
                                                         No
                                                     </label>
                                                 </div>
@@ -1054,7 +1050,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q18">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -1072,7 +1068,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 text-left">
                                                 <div class="input-group col-sm-12">
-                                                    <div class="form-group is-empty"><textarea class="form-control" placeholder="Explicar"></textarea><span class="material-input"></span></div>
+                                                    <div class="form-group is-empty"><textarea class="form-control" name="q18" placeholder="Explicar" disabled required></textarea><span class="material-input"></span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1085,7 +1081,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q19">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -1104,31 +1100,31 @@
                                             <div class="col-sm-12 text-left">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q19" required><span class="circle"></span><span class="check"></span>
                                                         Siempre
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q19"><span class="circle"></span><span class="check"></span>
                                                         Frecuentemente
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q19"><span class="circle"></span><span class="check"></span>
                                                         A veces
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q19"><span class="circle"></span><span class="check"></span>
                                                         Raras veces
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q19"><span class="circle"></span><span class="check"></span>
                                                         Nunca
                                                     </label>
                                                 </div>
@@ -1155,7 +1151,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q20">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -1174,31 +1170,31 @@
                                             <div class="col-sm-12 text-left">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q20" required><span class="circle"></span><span class="check"></span>
                                                         Muy predecible
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q20"><span class="circle"></span><span class="check"></span>
                                                         Predecible
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q20"><span class="circle"></span><span class="check"></span>
                                                         Regular
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q20"><span class="circle"></span><span class="check"></span>
                                                         Impredecible
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q20"><span class="circle"></span><span class="check"></span>
                                                         Muy impredecible
                                                     </label>
                                                 </div>
@@ -1213,7 +1209,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q21">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -1232,31 +1228,31 @@
                                             <div class="col-sm-12 text-left">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q21" required><span class="circle"></span><span class="check"></span>
                                                         Muy predecible
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q21"><span class="circle"></span><span class="check"></span>
                                                         Predecible
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q21"><span class="circle"></span><span class="check"></span>
                                                         Regular
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q21"><span class="circle"></span><span class="check"></span>
                                                         Impredecible
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q21"><span class="circle"></span><span class="check"></span>
                                                         Muy impredecible
                                                     </label>
                                                 </div>
@@ -1271,7 +1267,7 @@
 
                     <div class="col-md-12">
                         <!-- Tabs with icons on Card -->
-                        <div class="card card-nav-tabs">
+                        <div class="card card-nav-tabs" id="q22">
                             <div class="header header-success">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
@@ -1290,31 +1286,31 @@
                                             <div class="col-sm-12 text-left">
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q22" required><span class="circle"></span><span class="check"></span>
                                                         Excelente
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q22"><span class="circle"></span><span class="check"></span>
                                                         Buena
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q22"><span class="circle"></span><span class="check"></span>
                                                         Regular
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q22"><span class="circle"></span><span class="check"></span>
                                                         Mala
                                                     </label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+                                                        <input type="radio" name="q22"><span class="circle"></span><span class="check"></span>
                                                         Muy mala
                                                     </label>
                                                 </div>
@@ -1347,7 +1343,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 text-left">
                                                 <div class="input-group col-sm-12">
-                                                    <div class="form-group is-empty"><textarea class="form-control" placeholder="Requisitos"></textarea><span class="material-input"></span></div>
+                                                    <div class="form-group is-empty"><textarea class="form-control" placeholder="Requisitos" required></textarea><span class="material-input"></span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1378,7 +1374,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 text-left">
                                                 <div class="input-group col-sm-12">
-                                                    <div class="form-group is-empty"><textarea class="form-control" placeholder="Requisitos"></textarea><span class="material-input"></span></div>
+                                                    <div class="form-group is-empty"><textarea class="form-control" placeholder="Requisitos" required></textarea><span class="material-input"></span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1393,13 +1389,14 @@
 
                 <div class="space-50"></div>
 
-                <button class="btn btn-block btn-primary">Enviar Encuesta</button>
+                <button class="btn btn-block btn-primary" type="submit">Enviar Encuesta</button>
 
             </div>
         </div>
 
 
-    </div>
+    </form>
+
     <footer class="footer">
         <div class="container">
             <nav class="pull-left">
@@ -1448,6 +1445,8 @@
 
     <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
     <script src="assets/js/material-kit.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="assets/js/validation.js" type="text/javascript"></script>
 
     <script type="text/javascript">
 
@@ -1461,7 +1460,7 @@
 
             //     $(window).on('scroll', materialKitDemo.checkScrollForParallax);
             // }
-
+            
         });
     </script>
 </html>

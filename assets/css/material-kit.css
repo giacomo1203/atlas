@@ -1137,8 +1137,8 @@ fieldset[disabled] .form-group.is-focused .radio label {
 }
 .radio input[type=radio] {
   opacity: 0;
-  height: 0;
-  width: 0;
+  height: 1px;
+  width: 1px;
   overflow: hidden;
 }
 .radio input[type=radio]:checked ~ .check, .radio input[type=radio]:checked ~ .circle {
@@ -1786,7 +1786,6 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   height: 100%;
   z-index: 100;
 }
-
 .form-control-feedback {
   opacity: 0;
 }
