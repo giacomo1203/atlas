@@ -38,10 +38,10 @@
             <a href="http://www.creative-tim.com">
                 <div class="logo-container">
                     <div class="logo">
-                        <img src="assets/img/logo.png" alt="Creative Tim Logo" rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>" data-placement="bottom" data-html="true">
+                        <img src="http://iospartners.com/wp-content/uploads/2015/09/logo-e1441483720937.png" alt="Creative Tim Logo" rel="tooltip" data-placement="bottom" data-html="true">
                     </div>
                     <div class="brand">
-                        Eduardo García-Godos
+                        IOS Partners,<br> Inc.
                     </div>
                 </div>
             </a>
@@ -61,13 +61,13 @@
 <!-- End Navbar -->
 
 <div class="wrapper">
-    <div class="header header-filter" style="background-image: url('http://ipfcom.org/img/fondo_home_completo3.jpg');">
+    <div class="header header-filter" style="background-image: url('assets/img/bg.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="brand">
-                        <h1>Survey v2</h1>
-                        <h3>Instituto de Facilitación del Comercio</h3>
+                        <h1>Encuesta VUCE 2.0</h1>
+                        <!-- <h3>Instituto de Facilitación del Comercio</h3> -->
                     </div>
                 </div>
             </div>
@@ -119,12 +119,21 @@
                             <form class="form" method="" action="">
                                 
                                 <div class="content">
+                                    <div class="non-row">
+                                        <div class="input-group col-md-6" style="float: left">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">domain</i>
+                                            </span>
+                                            <div class="form-group is-empty"><input id="company" type="text" class="form-control" placeholder="Nombre de la empresa u organización"><span class="material-input"></span></div>
+                                            <div id="suggest" class="collection"></div>
+                                        </div>
 
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="material-icons">domain</i>
-                                        </span>
-                                        <div class="form-group is-empty"><input type="text" class="form-control" placeholder="Nombre de la empresa u organización"><span class="material-input"></span></div>
+                                        <div class="input-group col-md-6" style="float: left">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">import_contacts</i>
+                                            </span>
+                                            <div class="form-group is-empty"><input id="ruc" readonly="readonly" type="text" class="form-control" placeholder="RUC"><span class="material-input"></span></div>
+                                        </div>
                                     </div>
 
                                     <div class="input-group">
@@ -140,20 +149,14 @@
                                         </span>
                                         <div class="form-group is-empty">
                                             <div class="input-field ubigeo dropdownjs">
-                                                <select>
-                                                    <option value="" disabled selected>Provincia</option>
-                                                    <option value="1">Option 1</option>
-                                                    <option value="2">Option 2</option>
-                                                    <option value="3">Option 3</option>
+                                                <select id="dep">
+                                                    <option value="" disabled selected>Departamento</option>
                                                 </select>
                                             </div>
 
                                             <div class="input-field ubigeo dropdownjs">
-                                                <select>
-                                                    <option value="" disabled selected>Distrito</option>
-                                                    <option value="1">Option 1</option>
-                                                    <option value="2">Option 2</option>
-                                                    <option value="3">Option 3</option>
+                                                <select id="prov">
+                                                    <option value="" disabled selected>Provincia</option>
                                                 </select>
                                             </div>
                                             <span class="material-input"></span></div>
@@ -1405,29 +1408,29 @@
             <nav class="pull-left">
                 <ul>
                     <li>
-                        <a href="http://ipfcom.org/">
-                            IPFCOM
+                        <a href="http://iospartners.com/">
+                            IOS
                         </a>
                     </li>
                     <li>
-                        <a href="http://ipfcom.org/index.php?p=nosotros">
-                           Nosotros
+                        <a href="http://iospartners.com/our-company/">
+                           Our
                         </a>
                     </li>
                     <li>
-                        <a href="http://ipfcom.org/index.php?p=servicios">
-                           Servicios
+                        <a href="http://iospartners.com/services/">
+                           Services
                         </a>
                     </li>
                     <li>
-                        <a href="http://ipfcom.org/index.php?p=eventos">
-                            Eventos
+                        <a href="http://iospartners.com/category/news/">
+                            News
                         </a>
                     </li>
                 </ul>
             </nav>
             <div class="copyright pull-right">
-                &copy; 2018, Desarrollado por IPFCOM.
+                &copy; 2018, Todos los derechos reservador.
             </div>
         </div>
     </footer>
@@ -1441,10 +1444,10 @@
     <script src="assets/js/material.min.js"></script>
 
     <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-    <script src="assets/js/nouislider.min.js" type="text/javascript"></script>
+    <!-- <script src="assets/js/nouislider.min.js" type="text/javascript"></script> -->
 
     <!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
-    <script src="assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <!-- <script src="assets/js/bootstrap-datepicker.js" type="text/javascript"></script> -->
 
     <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
     <script src="assets/js/material-kit.js" type="text/javascript"></script>
@@ -1464,4 +1467,5 @@
 
         });
     </script>
+    <script src="assets/js/main.js" type="text/javascript"></script>
 </html>
