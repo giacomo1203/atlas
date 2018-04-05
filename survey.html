@@ -35,7 +35,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="http://www.creative-tim.com">
+            <a href="#">
                 <div class="logo-container">
                     <div class="logo">
                         <img src="http://iospartners.com/wp-content/uploads/2015/09/logo-e1441483720937.png" alt="IOS Partners" rel="tooltip" data-placement="bottom" data-html="true">
@@ -121,7 +121,7 @@
                                         <span class="input-group-addon">
                                             <i class="material-icons">domain</i>
                                         </span>
-                                        <div class="form-group is-empty"><input id="company" type="text" name="empresa" class="form-control" placeholder="Nombre de la empresa u organización" required><span class="material-input"></span></div>
+                                        <div class="form-group is-empty"><input id="company" type="text" name="company" class="form-control" placeholder="Nombre de la empresa u organización" required><span class="material-input"></span></div>
                                         <div id="suggest" class="collection"></div>
                                     </div>
 
@@ -129,7 +129,7 @@
                                         <span class="input-group-addon">
                                             <i class="material-icons">import_contacts</i>
                                         </span>
-                                        <div class="form-group is-empty"><input id="ruc" readonly="readonly" type="text" class="form-control" placeholder="RUC"><span class="material-input"></span></div>
+                                        <div class="form-group is-empty"><input id="ruc" readonly="readonly" type="text" name="ruc" class="form-control" placeholder="RUC"><span class="material-input"></span></div>
                                     </div>
                                 </div>
 
@@ -137,7 +137,7 @@
                                     <span class="input-group-addon">
                                         <i class="material-icons">shopping_cart</i>
                                     </span>
-                                    <div class="form-group is-empty"><input type="text" name="productos" class="form-control" placeholder="Productos que comercializa haciendo uso del Procedimiento" required><span class="material-input"></span></div>
+                                    <div class="form-group is-empty"><input type="text" name="products" class="form-control" placeholder="Productos que comercializa haciendo uso del Procedimiento" required><span class="material-input"></span></div>
                                 </div>
 
                                 <div class="input-group">
@@ -162,7 +162,7 @@
 
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="procedimiento_esta_en_vuce" id="checkProccess">
+                                        <input type="checkbox" name="isVUCE" id="checkProccess">
                                         El Procedimiento se encuentra en la VUCE
                                     </label>
                                 </div>
@@ -171,7 +171,7 @@
                                     <span class="input-group-addon">
                                         <i class="material-icons">create</i>
                                     </span>
-                                    <div class="form-group is-empty"><input type="text" name="procedimiento_denominacion" class="form-control" placeholder="Denominación del Procedimiento" required><span class="material-input"></span></div>
+                                    <div class="form-group is-empty"><input type="text" name="denomination" class="form-control" placeholder="Denominación del Procedimiento" required><span class="material-input"></span></div>
                                 </div>
 
                             </div>
@@ -1441,7 +1441,7 @@
     </footer>
 </div>
 
-<div class="modal fade show" id="myModal" tabindex="-1" role="dialog">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
