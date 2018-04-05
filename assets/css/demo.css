@@ -411,10 +411,10 @@
 
 .input-field.ubigeo {
     width: 48%;
-    border-bottom: 1px solid #d2d2d2;
     float: left;
-    padding: 3px 12px;
+    padding: 3px 24px 3px 0;
     position: relative;
+    margin-bottom: 10px;
 }
 .input-field:first-child {
     margin-right: 4%;
@@ -434,6 +434,8 @@
     top: 73%;
     max-height: 300px;
     overflow-y: visible !important;
+    right: 0px;
+    left: 0px;
     display: none;
 }
 

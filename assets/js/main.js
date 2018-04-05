@@ -9,6 +9,9 @@ $(function () {
     var $company;
     var $suggest;
     var $ruc;
+    var $block1;
+    var $checkProccess;
+    var $btnStart;
 
     var populateRegion = function () {
         var tempHtml = [];
@@ -51,24 +54,25 @@ $(function () {
 
     var typingInput = function (event) {
         var q = $(event.currentTarget).val().toLowerCase();
-        var result;
+        var result = [];
         var tempHtml = [];
-        if (q.length > 2) {
+        if (q.length > 1) {
             result = filterCompanies(q);
         }
 
-        if (result !== undefined) {
+        if (result.length !== 0) {
             result.forEach(function (item) {
-                tempHtml.push("<a href='#!'' data-ruc='" + item.ruc + "'' class='collection-item'>" + item.empresa + '</a>');
+                tempHtml.push("<a href='#!'' data-ruc='" + item.ruc + "'' class='collection-item'>" + item.empresa + "</a>");
             });
-            $suggest.html(tempHtml.join(''));
-            $suggest.slideDown();
-            $('a[data-ruc]').on('click', selectedOption);
         } else {
-            $suggest.slideUp();
+            tempHtml.push("<a class='collection-item'> Sin resultados </a>");
         }
 
-        tempHtml = [];
+        $suggest.html(tempHtml.join(''));
+        $suggest.slideDown();
+        $('a[data-ruc]').on('click', selectedOption);
+
+        //tempHtml = [];
     };
 
     var loadUbigeo = function () {
@@ -94,11 +98,43 @@ $(function () {
         }
     };
 
+    var toggleBlock = function (event) {
+        var $elem = $(event.currentTarget);
+
+        if ($elem.is(":checked")) {
+            $block1.slideDown(500);
+            $('.alert.alert-info').hide();
+        } else {
+            $block1.slideUp(500);
+            if ($('.alert.alert-info').length > 0) {
+                $('.alert.alert-info').show();
+            } else {
+                $('<div class="alert alert-info">' +
+                        '<div class="container">' +
+                        '    <div class="alert-icon">' +
+                        '        <i class="material-icons">info_outline</i>' +
+                        '    </div>' +
+                        '    <button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '        <span aria-hidden="true"><i class="material-icons">clear</i></span>' +
+                        '    </button>' +
+                        '    <b>Nota:</b> Se omitirá las tres primeras preguntas, debido a que el procedimiento no se encuentra en la VUCE.' +
+                        '</div>' +
+                        '</div>').insertAfter($block1);
+            }
+        }
+    };
+
+    var scrollInit = function () {
+        $("html, body").stop().animate({scrollTop: $('#formSurvey').offset().top - 80}, 500, 'swing');
+    };
+
     var bind = function () {
         $region.on('change', populateProvincia);
         $company.on('keyup', typingInput);
         $company.on('blur', hideSuggest);
         $company.on('focus', showSuggest);
+        $checkProccess.on('change', toggleBlock);
+        $btnStart.on('click', scrollInit);
     };
 
     var cache = function () {
@@ -107,6 +143,9 @@ $(function () {
         $company = $('#company');
         $ruc = $('#ruc');
         $suggest = $('#suggest');
+        $block1 = $('#block1');
+        $checkProccess = $('#checkProccess');
+        $btnStart = $('#btnStart');
     };
 
     var setup = function () {
