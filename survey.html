@@ -38,10 +38,10 @@
             <a href="http://www.creative-tim.com">
                 <div class="logo-container">
                     <div class="logo">
-                        <img src="assets/img/logo.png" alt="Creative Tim Logo" rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>" data-placement="bottom" data-html="true">
+                        <img src="http://iospartners.com/wp-content/uploads/2015/09/logo-e1441483720937.png" alt="IOS Partners" rel="tooltip" data-placement="bottom" data-html="true">
                     </div>
                     <div class="brand">
-                        Eduardo García-Godos
+                        IOS Partners,<br> Inc.
                     </div>
                 </div>
             </a>
@@ -51,7 +51,7 @@
             <ul class="nav navbar-nav navbar-right">
                 
                 <li>
-                    <button class="btn btn-warning">Iniciar Encuesta</button>
+                    <button id="btnStart" class="btn btn-warning">Iniciar Encuesta</button>
                 </li>
 
             </ul>
@@ -61,13 +61,13 @@
 <!-- End Navbar -->
 
 <div class="wrapper">
-    <div class="header header-filter" style="background-image: url('http://ipfcom.org/img/fondo_home_completo3.jpg');">
+    <div class="header header-filter" style="background-image: url('assets/img/bg.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="brand">
-                        <h1>Survey v2</h1>
-                        <h3>Instituto de Facilitación del Comercio</h3>
+                        <h1>Encuesta VUCE 2.0</h1>
+                        <!-- <h3>Instituto de Facilitación del Comercio</h3> -->
                     </div>
                 </div>
             </div>
@@ -110,19 +110,27 @@
                 </div>
             </div>
 
-
-
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 col-md-offset-3">
+
                         <div class="card card-signup">    
                             <div class="content">
+                                <div class="non-row clearfix">
+                                    <div class="input-group col-md-6" style="float: left"">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">domain</i>
+                                        </span>
+                                        <div class="form-group is-empty"><input id="company" type="text" name="empresa" class="form-control" placeholder="Nombre de la empresa u organización" required><span class="material-input"></span></div>
+                                        <div id="suggest" class="collection"></div>
+                                    </div>
 
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="material-icons">domain</i>
-                                    </span>
-                                    <div class="form-group is-empty"><input type="text" name="empresa" class="form-control" placeholder="Nombre de la empresa u organización" required><span class="material-input"></span></div>
+                                    <div class="input-group col-md-6" style="float: left">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">import_contacts</i>
+                                        </span>
+                                        <div class="form-group is-empty"><input id="ruc" readonly="readonly" type="text" class="form-control" placeholder="RUC"><span class="material-input"></span></div>
+                                    </div>
                                 </div>
 
                                 <div class="input-group">
@@ -136,30 +144,25 @@
                                     <span class="input-group-addon">
                                         <i class="material-icons">location_on</i>
                                     </span>
-                                    <div class="form-group is-empty">
+                                    <div class="form-group is-empty clearfix">
                                         <div class="input-field ubigeo dropdownjs">
-                                            <select name="provincia" required>
-                                                <option value="" disabled selected>Provincia</option>
-                                                <option value="1">Option 1</option>
-                                                <option value="2">Option 2</option>
-                                                <option value="3">Option 3</option>
+                                            <select class="form-control" id="dep" name="departamento" required>
+                                                <option value="" disabled selected>Departamento</option>
                                             </select>
                                         </div>
 
                                         <div class="input-field ubigeo dropdownjs">
-                                            <select name="distrito" required>
-                                                <option value="" disabled selected>Distrito</option>
-                                                <option value="1">Option 1</option>
-                                                <option value="2">Option 2</option>
-                                                <option value="3">Option 3</option>
+                                            <select class="form-control" id="prov" name="provincia" required>
+                                                <option value="" disabled selected>Provincia</option>
                                             </select>
                                         </div>
-                                        <span class="material-input"></span></div>
+                                        <span class="material-input"></span>
+                                    </div>
                                 </div>
 
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="procedimiento_esta_en_vuce">
+                                        <input type="checkbox" name="procedimiento_esta_en_vuce" id="checkProccess">
                                         El Procedimiento se encuentra en la VUCE
                                     </label>
                                 </div>
@@ -172,19 +175,15 @@
                                 </div>
 
                             </div>
-                            <!-- <div class="footer text-center">
-                                <a href="#pablo" class="btn btn-simple btn-primary btn-lg">Get Started</a>
-                            </div> -->
+
                             <div class="space-50"></div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
 
-        <div class="section section-basic">
+        <div class="section section-basic" style="display: none" id="block1">
             <div class="container">
                 <div class="title">
                     <h2>Satisfacción del usuario de la VUCE</h2>
@@ -491,6 +490,18 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+
+        <div class="alert alert-info">
+            <div class="container">
+                <div class="alert-icon">
+                    <i class="material-icons">info_outline</i>
+                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                </button>
+                <b>Nota:</b> Se omitirá las tres primeras preguntas, debido a que el procedimiento no se encuentra en la VUCE.
             </div>
         </div>
 
@@ -1402,33 +1413,54 @@
             <nav class="pull-left">
                 <ul>
                     <li>
-                        <a href="http://ipfcom.org/">
-                            IPFCOM
+                        <a href="http://iospartners.com/">
+                            IOS
                         </a>
                     </li>
                     <li>
-                        <a href="http://ipfcom.org/index.php?p=nosotros">
-                           Nosotros
+                        <a href="http://iospartners.com/our-company/">
+                           Our
                         </a>
                     </li>
                     <li>
-                        <a href="http://ipfcom.org/index.php?p=servicios">
-                           Servicios
+                        <a href="http://iospartners.com/services/">
+                           Services
                         </a>
                     </li>
                     <li>
-                        <a href="http://ipfcom.org/index.php?p=eventos">
-                            Eventos
+                        <a href="http://iospartners.com/category/news/">
+                            News
                         </a>
                     </li>
                 </ul>
             </nav>
             <div class="copyright pull-right">
-                &copy; 2018, Desarrollado por IPFCOM.
+                &copy; 2018, Todos los derechos reservador.
             </div>
         </div>
     </footer>
 </div>
+
+<div class="modal fade show" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Muchas gracias</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="material-icons">clear</i>
+                    </button> -->
+                </div>
+                <div class="modal-body">
+                    <p>Agradecemos el tiempo que ha invertido en responder nuestra encuesta.
+                    </p>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-link">Nice Button</button>
+                    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
 
 
 </body>
@@ -1437,30 +1469,9 @@
     <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="assets/js/material.min.js"></script>
 
-    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-    <script src="assets/js/nouislider.min.js" type="text/javascript"></script>
-
-    <!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
-    <script src="assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
-
     <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
     <script src="assets/js/material-kit.js" type="text/javascript"></script>
     <script src="assets/js/jquery.validate.min.js" type="text/javascript"></script>
     <script src="assets/js/validation.js" type="text/javascript"></script>
-
-    <script type="text/javascript">
-
-        $().ready(function(){
-            // the body of this function is in assets/material-kit.js
-            // materialKit.initSliders();
-            // window_width = $(window).width();
-
-            // if (window_width >= 992){
-            //     big_image = $('.wrapper > .header');
-
-            //     $(window).on('scroll', materialKitDemo.checkScrollForParallax);
-            // }
-            
-        });
-    </script>
+    <script src="assets/js/main.js" type="text/javascript"></script>
 </html>

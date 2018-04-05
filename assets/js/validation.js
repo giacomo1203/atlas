@@ -50,7 +50,7 @@
       },
       
       errorElement: 'div',
-      errorClass: 'help-block',
+      errorClass: 'text-danger',
       errorPlacement: function ($error, $element) {
         var $el;
 
@@ -72,7 +72,6 @@
       }
     });
   }
-
   
   function onClickCardDynamicRemove(event) {
     event.preventDefault();
@@ -176,6 +175,8 @@
     // });
 
     // console.log(validationOptions);
+    // Show Modal
+    // $('#myModal').modal({backdrop: 'static', keyboard: false});
     
     // $form.validate(validationOptions);
     $formSurvey.validate();
