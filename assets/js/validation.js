@@ -160,12 +160,14 @@
     var $formSurvey = $("#formSurvey");
     // var $formControls = $form.find('input:not([type="hidden"]), select, textarea');
 
-    // var validationOptions = {
-    //   submitHandler: function (form) {
-    //     form.submit();
-    //   },
-    //   rules: {}
-    // };
+    var validationOptions = {
+      submitHandler: function (form) {
+        // form.submit();
+        form.preventDefault();
+        console.log("---->", $(form).serialize());
+        console.log(form.serialize());
+      }
+    };
 
     // $formControls.toArray().forEach(function (formControl) {
     //   if (formControl.getAttribute('required') !== null) {
@@ -179,7 +181,7 @@
     // $('#myModal').modal({backdrop: 'static', keyboard: false});
     
     // $form.validate(validationOptions);
-    $formSurvey.validate();
+    $formSurvey.validate(validationOptions);
   }
 
   init();
