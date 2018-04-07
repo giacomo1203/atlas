@@ -113,7 +113,7 @@
   }
 
   function dataDisableCheck($el) {
-    console.log('[dataDisableCheck] $el', $el);
+    //console.log('[dataDisableCheck] $el', $el);
     var elDataDisable = $el.attr('data-disable');
     var elDataNoDisable = $el.attr('data-nodisable');
     
@@ -163,20 +163,22 @@
     var validationOptions = {
       submitHandler: function (form) {
 
-        console.log('--->', $formSurvey.serialize());
-        // form.submit();
-        $formSurvey.submit(function(e) {
-          e.preventDefault();
-          $.ajax({
-            type: "POST",
-            url: "https://survey.duckduck.wyracocha.com",
-            data: $formSurvey.serialize(),
-            success: function(data) {
-              console.log(data);
-            }
-          });
-          return false;
+        $('#btnSubmit').prop("disabled", true);
+        $('#btnSubmit').find('i').removeClass('hidden');
+
+        $.ajax({
+          type: "POST",
+          headers: { 'Access-Control-Allow-Origin': '*' },
+          url: "https://survey.duckduck.wyracocha.com",
+          data: $formSurvey.serialize(),
+          success: function(data) {
+            console.log(data);
+            $('#myModal').modal({backdrop: 'static', keyboard: false});
+            $('#btnSubmit').find('i').addClass('hidden');
+          }
         });
+        return false;
+
       }
     };
 

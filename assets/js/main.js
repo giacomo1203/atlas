@@ -2,8 +2,10 @@
 
 $(function () {
     'use strict';
-    var companies = $.Deferred();
-    var ubigeo = $.Deferred();
+    var companies;
+    var ubigeo;
+    var dCom = $.Deferred();
+    var dUbi = $.Deferred();
     var $region;
     var $provincia;
     var $company;
@@ -77,14 +79,28 @@ $(function () {
 
     var loadUbigeo = function () {
         $.getJSON("assets/data/ubigeo.json", function (data) {
-            ubigeo.resolve(data);
+            dUbi.resolve(data);
             populateRegion();
         });
     };
 
+    var cleanCompanies = function (json) {
+        var ids = [],
+            clean = [];
+
+        $.each(json, function (index, value) {
+            if ($.inArray(value.ruc, ids) === -1) {
+                ids.push(value.ruc);
+                clean.push(value);
+            }
+        });
+
+        return clean;
+    };
+
     var loadCompanies = function () {
         $.getJSON("assets/data/companies.json", function (data) {
-            companies.resolve(data);
+            dCom.resolve(data);
         });
     };
 
@@ -152,8 +168,8 @@ $(function () {
         loadUbigeo();
         loadCompanies();
 
-        $.when(companies, ubigeo).done(function (_c, _u) {
-            companies = _c;
+        $.when(dCom, dUbi).done(function (_c, _u) {
+            companies = cleanCompanies(_c);
             ubigeo = _u;
         });
     };
