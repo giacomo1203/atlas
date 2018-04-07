@@ -170,7 +170,7 @@
           type: "POST",
           headers: { 'Access-Control-Allow-Origin': '*' },
           url: "https://survey.duckduck.wyracocha.com",
-          data: $formSurvey.serialize(),
+          data: $formSurvey.serializeJSON(),
           success: function(data) {
             console.log(data);
             $('#myModal').modal({backdrop: 'static', keyboard: false});
@@ -178,7 +178,6 @@
           }
         });
         return false;
-
       }
     };
 
