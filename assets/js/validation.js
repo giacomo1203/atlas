@@ -162,10 +162,21 @@
 
     var validationOptions = {
       submitHandler: function (form) {
+
+        console.log('--->', $formSurvey.serialize());
         // form.submit();
-        form.preventDefault();
-        console.log("---->", $(form).serialize());
-        console.log(form.serialize());
+        $formSurvey.submit(function(e) {
+          e.preventDefault();
+          $.ajax({
+            type: "POST",
+            url: "https://survey.duckduck.wyracocha.com",
+            data: $formSurvey.serialize(),
+            success: function(data) {
+              console.log(data);
+            }
+          });
+          return false;
+        });
       }
     };
 
