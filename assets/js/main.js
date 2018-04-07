@@ -2,8 +2,8 @@
 
 $(function () {
     'use strict';
-    var companies;
-    var ubigeo;
+    var companies = {};
+    var ubigeo = {};
     var dCom = $.Deferred();
     var dUbi = $.Deferred();
     var $region;
@@ -80,7 +80,6 @@ $(function () {
     var loadUbigeo = function () {
         $.getJSON("assets/data/ubigeo.json", function (data) {
             dUbi.resolve(data);
-            populateRegion();
         });
     };
 
@@ -171,6 +170,8 @@ $(function () {
         $.when(dCom, dUbi).done(function (_c, _u) {
             companies = cleanCompanies(_c);
             ubigeo = _u;
+
+            populateRegion();
         });
     };
 
